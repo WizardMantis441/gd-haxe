@@ -19,6 +19,7 @@ class GJSprites {
     public static function makeBackdrop(filePath:String, axis:FlxAxes = FlxAxes.XY, ?spacingX:Int = 0, ?spacingY:Int = 0,
     ?type:GJSpriteType = GJSpriteType.NONE, ?scrollX:Float = 0.0, ?scrollY:Float = 0.0) {
         var array = filePath.split('/');
+	trace(type);
         filePath += '/${array[array.length-1]}_001$type.png';
         if (!Assets.exists(filePath)) return new FlxBackdrop();
         var backdrop:FlxBackdrop = new FlxBackdrop(filePath, axis, spacingX, spacingY);
@@ -32,10 +33,17 @@ class GJSprites {
         return backdrop;
     }
 
+    /**
+        @param Path - The Path to the Sprite [String]
+        @param Y - [Not Required] The X Position to set to [Float / Int]
+        @param X - [Not Required] The Y Position to set to [Float / Int]
+        @param Type - [Not Required] The Type of Sprite (none is just the smallest sprite with low detail). HD is bigger with more quality. UDH is very big with the best qualtiy [GJSpriteType]
+    **/
     public static function makeSprite(filePath:String, ?posX:Float = 0, ?posY:Float = 0, ?type:GJSpriteType = GJSpriteType.NONE) {
         var array = filePath.split('/');
+	trace(type);
         filePath += '/${array[array.length-1]}_001$type.png';
-        if (!Assets.exists(filePath)) return new FlxSprite();
+        if (!Assets.exists(filePath)) return new FlxSprite(posX, posY);
         var sprite:FlxSprite = new FlxSprite(posX, posY).loadGraphic(filePath);
         switch(type) {
             case NONE: //a

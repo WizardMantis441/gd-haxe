@@ -19,9 +19,8 @@ class Player extends FlxSprite {
     var iconRobot:Int = 0;
     var iconSpider:Int = 0;
 
-
 	override public function new() {
-		super.create();
+		super();
 	}
 
 	override public function update(elapsed:Float) {

@@ -1,4 +1,4 @@
-package assets;
+package utils;
 enum abstract AssetType (String) to String from String {
     var TEXT = "TEXT";
     var JSON = "JSON";

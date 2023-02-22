@@ -1,4 +1,4 @@
-package assets;
+package utils;
 import haxe.io.Bytes;
 import openfl.media.Sound;
 import flixel.graphics.frames.FlxAtlasFrames;
@@ -7,7 +7,7 @@ import flixel.graphics.FlxGraphic;
 import haxe.Json;
 import sys.FileSystem;
 import sys.io.File;
-import assets.Paths;
+import utils.Paths;
 
 using StringTools;
 

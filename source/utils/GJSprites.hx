@@ -18,8 +18,10 @@ class GJSprites {
     public static function makeBackdrop(filePath:String, axis:FlxAxes = FlxAxes.XY, ?spacingX:Int = 0, ?spacingY:Int = 0,
     ?type:GJQualityType = GJQualityType.NONE, ?scrollX:Float = 0.0, ?scrollY:Float = 0.0) {
         var array = filePath.split('/');
+        trace(array);
+        trace(filePath);
         filePath += '/${array[array.length-1]}_001$type.png';
-        if (!Assets.exists(filePath)) return new FlxBackdrop();
+        trace(filePath);
         var backdrop:FlxBackdrop = new FlxBackdrop(Assets.load(IMAGE, filePath), axis, spacingX, spacingY);
         switch(type) {
             case NONE: //a

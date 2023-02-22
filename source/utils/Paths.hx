@@ -31,5 +31,5 @@ class Paths {
 
 enum abstract GJSpriteType(String) to String from String {
     var GROUND = "grounds";
-    var BACKGROUND = "backgrounds";
+    var BG = "backgrounds";
 }

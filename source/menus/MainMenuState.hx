@@ -1,13 +1,12 @@
 package menus;
 
 import flixel.FlxSprite;
-import flixel.FlxG;
-import flixel.FlxState;
 import flixel.addons.display.FlxBackdrop;
 import flixel.util.FlxAxes;
 import utils.GJSprites;
+import game.State;
 
-class MainMenuState extends FlxState {
+class MainMenuState extends State {
 	var bg:FlxBackdrop;
 	var floor:FlxBackdrop;
 
@@ -19,8 +18,8 @@ class MainMenuState extends FlxState {
 		// bg.velocity.x -= 100;
 		// floor = new FlxBackdrop('assets/images/grounds/groundSquare_01_001.png', FlxAxes.X, 0, 0);
 		// floor.velocity.x -= 750;
-		bg = GJSprites.makeBackdrop(Paths.getGJsprites("backgrounds/game_bg_01"), FlxAxes.X, 0, 0, NONE, -100);
-		floor = GJSprites.makeBackdrop(Paths.getGJsprites("grounds/groundSquare_01"), FlxAxes.X, 0, 0, NONE, -750);
+		bg = GJSprites.makeBackdrop(Paths.getGJsprites("game_bg_01", BG), FlxAxes.X, 0, 0, NONE, -100);
+		floor = GJSprites.makeBackdrop(Paths.getGJsprites("groundSquare_01"), FlxAxes.X, 0, 0, NONE, -750);
 		for (i in [bg, floor]) {
 			i.antialiasing = true;
 			i.setGraphicSize(Std.int(i.width * 2));
@@ -39,7 +38,7 @@ class MainMenuState extends FlxState {
 	function uhh() {
 		swap = !swap;
 		floor.destroy();
-		floor = GJSprites.makeBackdrop(Paths.getGJsprites("grounds/groundSquare_01"), FlxAxes.X, 0, 0, (swap) ? NONE:UHD, -750);
+		floor = GJSprites.makeBackdrop(Paths.getGJsprites("groundSquare_01"), FlxAxes.X, 0, 0, (swap) ? NONE:UHD, -750);
 		floor.setGraphicSize(Std.int(floor.width * 2));
 		floor.y = FlxG.height - floor.height + 50;
 		floor.antialiasing = true;

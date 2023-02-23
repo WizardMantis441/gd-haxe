@@ -86,6 +86,7 @@ class AssetCache {
 	var cache:Map<String, Any> = new Map();
 
 	public function add(path:String, data:Any) {
+		trace(cache);
 		cache.set(FileSystem.absolutePath(path), data);
 		var items = 0;
 		for (asset in cache.keys())

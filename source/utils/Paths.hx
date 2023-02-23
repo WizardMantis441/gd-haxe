@@ -39,6 +39,6 @@ enum abstract GJSpriteType(String) to String from String {
 }
 enum abstract GJQualityType(String) to String from String {
     var NONE = "";
-    var HD = "";
-    var UHD = "";
+    var HD = "-hd";
+    var UHD = "-uhd";
 }

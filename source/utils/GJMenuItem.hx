@@ -17,7 +17,7 @@ class GJMenuSprite {
   function addMenuSprite(name:String, ?xPos:Float = 0, ?yPos:Float = 0,
   ?mouseDown:Void->Void = function() {}, ?mouseUp:Void->Void = function() {}, ?mouseOver:Void->Void = function() {}, ?mouseOut:Void->Void = function() {}) {
     sprite = new FlxSprite(xPos,yPos); // since we don't have a way of loading it returns basically a HaxeFlixel Logo.
-    FlxMouseEventManager.add(sprite, mouseDown, );
+    FlxMouseEventManager.add(sprite, mouseDown, mouseUp, mouseOver, mouseOut);
     return sprite;
   }
 }

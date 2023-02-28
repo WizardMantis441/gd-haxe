@@ -1,10 +1,9 @@
 package utils;
 import flixel.FlxSprite;
-import flixel.input.mouse.FlxMouseEventManager;
 
 class GJMenuSprite {
   function new() {}
-  /*
+  /**
   * @param Name - The name of the sprite, instead of doing sprite.loadGraphic since its not a single image. Its in an XML or PLIST [String]
   * @param xPos - [Not Required] Sets the X position of the sprite [Int / Float]
   * @param yPos - [Not Required] Sets the Y position of the sprite [Int / Float]
@@ -14,10 +13,9 @@ class GJMenuSprite {
   * @param MouseOut - [Not Required] A Callback Function that runs when the mouse is no longer over the sprite. this means even if the mouse hasn't touched the sprite at all,
   it will still run the function. I think not sure.
   **/
-  function addMenuSprite(name:String, ?xPos:Float = 0, ?yPos:Float = 0,
-  ?mouseDown:Void->Void = function() {}, ?mouseUp:Void->Void = function() {}, ?mouseOver:Void->Void = function() {}, ?mouseOut:Void->Void = function() {}) {
-    sprite = new FlxSprite(xPos,yPos); // since we don't have a way of loading it returns basically a HaxeFlixel Logo.
-    FlxMouseEventManager.add(sprite, mouseDown, mouseUp, mouseOver, mouseOut);
+  // public var sprite:FlxSprite;
+  public function addMenuSprite(name:String, ?xPos:Float = 0, ?yPos:Float = 0) {
+    var sprite = new FlxSprite(xPos,yPos); // since we don't have a way of loading it returns basically a HaxeFlixel Logo.
     return sprite;
   }
 }
